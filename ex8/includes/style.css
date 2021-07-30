@@ -1,0 +1,72 @@
+.wrapper{
+	display: grid;
+	grid-gap: 0;
+	grid-template-columns: 150px auto 100px;
+	grid-template-rows: 80px 35px auto 35px;
+	grid-template-areas: "header header search"
+						 "menu menu menu"
+						 "lsidebar contents contents"
+						 "footer footer footer";
+}
+
+.header{
+	grid-area: header;
+	vertical-align: center;
+	text-align: center;
+	background-color: grey;
+}
+.menu{
+	grid-area: menu;
+	text-align: right;
+	padding-right: 100px;
+	background-color: silver;
+}
+.lsidebar{
+	grid-area: lsidebar;
+	padding: 10px;
+	background-color: grey;
+}
+.search{
+	grid-area: search;
+	background-color: grey;
+	padding-right: 10px;
+}
+.contents{
+	grid-area: contents;
+	padding: 10px;
+}
+.footer{
+	grid-area: footer;
+	text-align: center;
+	background-color: silver;
+}
+
+@media screen and (max-width: 800px){
+	.wrapper{
+		grid-template-columns: auto 100px;
+		grid-template-rows: 80px 35px auto auto 35px;
+		grid-template-areas: "header search"
+							 "menu menu"
+							 "contents contents"
+							 "lsidebar lsidebar"
+							 "footer footer";
+	}
+	.menu{
+		padding-right: 0px;
+	}
+}
+@media screen and (max-width: 680px){
+	.wrapper{
+		grid-template-columns: auto;
+		grid-template-rows: 80px auto 35px auto auto 35px;
+		grid-template-areas: "header"
+							 "search"
+							 "menu"
+							 "contents"
+							 "lsidebar"
+							 "footer";
+	}
+	.menu{
+		padding-right: 0px;
+	}
+}
